@@ -233,7 +233,7 @@ Page {
                             , i18n.tr("\n\nWhen you uninstall a package, it checks if it is actually installed to your system and delete the system files that matches the files in the package.")
                             , i18n.tr("New folders created by the package will be retained.")
                             , i18n.tr("Uninstalling a package may take a long time for bigger packages because it reads the files from the archived package file and compare them to the system files.")
-                            , i18n.tr("\n\nWhen you reset a component, it simply restores all files the has the filename suffix/extension of this installer's modification (.JERKORIG).")
+                            , i18n.tr("\n\nWhen you reset a component, it simply restores all files that has the filename suffix/extension of this installer's modification (.JERKORIG).")
                             , i18n.tr("It does not delete new files installed by the packages.")
                             , i18n.tr("Because of this, this is a much faster way of removing packages albeit less clean.")
                         ].join(" ")
@@ -242,7 +242,7 @@ Page {
                     Label {
                         Layout.fillWidth: true
                         wrapMode: Text.WordWrap
-                        text: i18n.tr("\n\nWhy are OTA Updates blocked?:\n")
+                        text: i18n.tr("\n\nWhy are OTA Updates blocked?\n")
                         textSize: Label.Large
                         font.weight: Font.DemiBold
                     }

@@ -93,16 +93,25 @@ Item {
     transitions: Transition {
         to: "zoom"
         SequentialAnimation {
+            // TODO: Disable for now since scrolling to currentindex is very glitchy
+            /*
             ParentAnimation {
                 LomiriNumberAnimation {
                     target: screenshotsView
                     properties: "width, height"
                 }
             }
+            */
             ScriptAction {
-                script: screenshotsView.positionViewAtIndex(screenshotsView.currentIndex, ListView.SnapPosition)
+                script: delayPositioning.restart()
             }
         }
+    }
+    
+    Timer {
+        id: delayPositioning
+        interval: 1
+        onTriggered: screenshotsView.positionViewAtIndex(screenshotsView.indexToZoom, ListView.SnapPosition)
     }
 
     Item {
@@ -114,6 +123,7 @@ Item {
             id: screenshotsView
 
             property bool oneAtATime: false
+            property int indexToZoom: -1
 
             anchors {
                 left: parent.left
@@ -156,6 +166,7 @@ Item {
                     onClicked: {
                         if (!rootItem.isZoomed) {
                             screenshotsView.currentIndex = index
+                            screenshotsView.indexToZoom = index
                             rootItem.switchToZoomed()
                         } else {
                             controlsOverlay.toggleShow()
@@ -176,7 +187,7 @@ Item {
             }
             property bool noCloseButton: true
 
-            opacity: 1
+            opacity: 0
             anchors.fill: parent
 
             function toggleShow() {

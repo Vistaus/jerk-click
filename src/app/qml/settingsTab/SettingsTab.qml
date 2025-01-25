@@ -25,6 +25,7 @@ ScrollView {
             property bool enableBackAnimation: false
             property bool enableDelayedBackAnimation: false
             property bool enableHeaderSwipeGesture: true
+            property bool enableForcedBottomGestureFromHeader: false
         }
 
         ColumnLayout {
@@ -66,6 +67,26 @@ ScrollView {
                     property: "checked"
                     value: mariKitSettingsItem.enableHeaderSwipeGesture
                 }
+            }
+            SettingsSwitch {
+                id: enableForcedBottomGestureFromHeader
+                Layout.fillWidth: true
+                text: "Enable forced bottom getsure from header"
+                onCheckedChanged: mariKitSettingsItem.enableForcedBottomGestureFromHeader = checked
+                Binding {
+                    target: enableForcedBottomGestureFromHeader
+                    property: "checked"
+                    value: mariKitSettingsItem.enableForcedBottomGestureFromHeader
+                }
+            }
+            Label {
+                Layout.fillWidth: true
+                Layout.leftMargin: units.gu(4)
+                Layout.rightMargin: units.gu(2)
+                Layout.alignment: Qt.AlignLeft| Qt.AlignVCenter
+                wrapMode: Text.WordWrap
+                font.italic: true
+                text: i18n.tr("This setting will try to load bottom gesture in the root item of a Header. Useful in apps where the toolkit's Page is not used but Header is used")
             }
             SettingsSwitch {
                 id: enableBottomSwipeGesture
