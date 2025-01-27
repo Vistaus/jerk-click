@@ -7,6 +7,8 @@ import "../components"
 Page {
     id: aboutPage
 
+    clip: true
+
     header: PageHeader {
         id: header
         title: i18n.tr("About")
@@ -236,6 +238,22 @@ Page {
                             , i18n.tr("\n\nWhen you reset a component, it simply restores all files that has the filename suffix/extension of this installer's modification (.JERKORIG).")
                             , i18n.tr("It does not delete new files installed by the packages.")
                             , i18n.tr("Because of this, this is a much faster way of removing packages albeit less clean.")
+                        ].join(" ")
+                    }
+
+                    Label {
+                        Layout.fillWidth: true
+                        wrapMode: Text.WordWrap
+                        text: i18n.tr("\n\nHow do you update packages?\n")
+                        textSize: Label.Large
+                        font.weight: Font.DemiBold
+                    }
+                    Label {
+                        Layout.fillWidth: true
+                        wrapMode: Text.WordWrap
+                        text: [
+                            i18n.tr("This app is currently not capable of detecting package versions and new updates.")
+                            , i18n.tr("To make sure you have updated packages installed, reinstall each package after an app update.")
                         ].join(" ")
                     }
 

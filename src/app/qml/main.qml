@@ -246,7 +246,7 @@ MainView {
             }
         }
     }
-    
+
     Component {
         id: initialDialog
         Dialog {
@@ -304,6 +304,11 @@ MainView {
             "component_id": "bluetooth_conf"
             , "name": "Bluetooth Config"
             , "hasRestart": false
+        }
+        , {
+            "component_id": "dialer-app"
+            , "name": "Dialer App"
+            , "hasRestart": true
         }
         , {
             "component_id": "lomiri"
