@@ -63,6 +63,14 @@ function restartLomiri() {
     return processLaunch(_cmd, _useSudo, _incStdError, _logToConsole);
 }
 
+function restartDialerApp() {
+    let _cmd = "systemctl --user restart lomiri-app-launch--application-legacy--dialer-app--.service";
+    let _useSudo = false
+    let _incStdError = false
+    let _logToConsole = true
+    return processLaunch(_cmd, _useSudo, _incStdError, _logToConsole);
+}
+
 function restartSettingsApp() {
     let _cmd = "systemctl --user restart lomiri-app-launch--application-legacy--lomiri-system-settings--.service";
     let _useSudo = false

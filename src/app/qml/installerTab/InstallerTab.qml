@@ -21,6 +21,19 @@ ScrollView {
             pageUrl: Qt.resolvedUrl("PackagePage.qml")
             pushProperties: { "component_id": "bluetooth_conf", "package_id": "bredr_fast", "pageTitle": text }
         }
+
+        ListItems.SectionDivider {
+            text: i18n.tr("Dialer App")
+            iconName: "dialer-app-symbolic"
+        }
+
+        ListItems.Page {
+            text: i18n.tr("Redesigned UI")
+            summary.text: i18n.tr("Applies a redesigned UI to the dialer app.")
+            summary.maximumLineCount: Number.MAX_VALUE
+            pageUrl: Qt.resolvedUrl("PackagePage.qml")
+            pushProperties: { "component_id": "dialer-app", "package_id": "dialerapp_redesigned", "pageTitle": text }
+        }
         
         ListItems.SectionDivider {
             text: i18n.tr("Lomiri")

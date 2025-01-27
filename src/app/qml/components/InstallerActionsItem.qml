@@ -185,6 +185,8 @@ Item {
                 case "maliit-keyboard-layouts":
                     Shell.restartMaliit()
                     break
+                case "dialer-app":
+                    Shell.restartDialerApp()
                 case "system-settings":
                     Shell.restartSettingsApp()
                     break
@@ -259,6 +261,11 @@ Item {
                                     , i18n.tr("\n\nWARNING: If %1 fails to restart, you won't be able to type or even login to your device without a physical keyboard or biometric login.").arg(componentName)
                                     , , resetSuggestionText].join(" ")
                             break
+                        case "dialer-app":
+                            return [ i18n.tr("This will restart the Dialer app.")
+                                    , i18n.tr("\n\nWARNING: If %1 fails to restart, you won't be able to open the %1 and make or receive any call.").arg(componentName)
+                                    , resetSuggestionText].join(" ")
+                            break
                         case "system-settings":
                             return [ i18n.tr("This will restart the System Settings app.")
                                     , i18n.tr("\n\nWARNING: If %1 fails to restart, you won't be able to open the %1 and change any setting.").arg(componentName)
@@ -292,6 +299,11 @@ Item {
                         case "uitk":
                             _finalText = [ i18n.tr("This will modify the Lomiri Toolkit.")
                                     , i18n.tr("\n\nWARNING: If %1 fails to restart after installation, all apps that use it will fail to open, including this app.").arg(componentName)
+                                    , resetSuggestionText].join(" ")
+                            break
+                        case "dialer-app":
+                            _finalText = [ i18n.tr("This will modify the Dialer app.")
+                                    , i18n.tr("\n\nWARNING: If %1 fails to restart after installation, you won't be able to open the Dialer app and make or receive any call.").arg(componentName)
                                     , resetSuggestionText].join(" ")
                             break
                         case "system-settings":
@@ -447,6 +459,7 @@ Item {
                     case "lomiri":
                     case "maliit-keyboard":
                     case "maliit-keyboard-layouts":
+                    case "dialer-app":
                     case "system-settings":
                         return i18n.tr("Restart %1 to make the changes take effect.").arg(componentName)
                     case "bluetooth_conf":

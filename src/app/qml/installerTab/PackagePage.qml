@@ -242,7 +242,15 @@ New Features: \n\
             , "sourceUrl": "https://github.com/kugiigi/jerk-packages/tree/main/Keyboard/Malakiboard"
             , "developer": "Kugi Eusebio"
             , "devUrl": "https://github.com/kugiigi"
-            , "changelog": "v1.5 \n\
+            , "changelog": "v1.6\n\
+- Notebook: Feature for saving texts that are available for pasting whenever you need them\n\
+- Custom Themes: Allow adding and creating unlimited number of custom themes\n\
+- Shortcuts Bar: Display easily accessible actions in the word ribbon\n\
+- Added option to show text preview at the top of the keyboard when in floating mode\n\
+- Added option to access Emoji keyboard from the Shortcuts Bar and display it as a layout instead of a separate language\n\
+- Fixed non-interactive area below the keyboard when in floating mode\n\
+- Updated Settings Slider from Lomiri Plus \n\n\n\
+v1.5 \n\
 - Commit text when using redo and undo actions \n\
 - Added option for custom bottom and side margins \n\
 - Fixed some remaining Ubuntu imports \n\
@@ -266,6 +274,16 @@ New Features: \n\
             , "description": "This changes controller mode from 'auto' to 'bredr' and enables 'FastConnectable'. This may fix some Bluetooth issues but there's no guarantee and battery drain may be higher. Feel free to try."
             , "screenshots": []
             , "sourceUrl": "https://github.com/kugiigi/jerk-packages/tree/main/Bluetooth_Conf/BREDR_FAST"
+            , "developer": "Kugi Eusebio"
+            , "devUrl": "https://github.com/kugiigi"
+            , "changelog": ""
+        }
+        , {
+            "package_id": "dialerapp_redesigned"
+            , "file_name": "DialerAppRedesigned"
+            , "description": "This a redesign of the dialer app that is already merged but will probably be only released in Noble."
+            , "screenshots": ["1.png", "2.png", "3.png"]
+            , "sourceUrl": "https://github.com/kugiigi/jerk-packages/tree/main/DialerApp/Redesign"
             , "developer": "Kugi Eusebio"
             , "devUrl": "https://github.com/kugiigi"
             , "changelog": ""
@@ -297,7 +315,14 @@ You can also add custom URLs as Quick Actions to help you quickly accessing page
             , "sourceUrl": "https://github.com/kugiigi/jerk-packages/tree/main/WebContainer/SapotContainer"
             , "developer": "Kugi Eusebio"
             , "devUrl": "https://github.com/kugiigi"
-            , "changelog": "v1.1\n \
+            , "changelog": "v1.2\n\
+- Implemented Reader mode\n\
+- Added option for a floating scroll button\n\
+- UI improvements in the Settings page\n\
+- Fixed forcing mobile site on big screens\n\
+- Fixed Google and Baidu when searching\n\
+- Allow closing overlay pages with mouse back button\n\n\n\
+v1.1\n \
 - Fixed error in right clicking empty space\n \
 - Fixed search text from overlays\n \
 - External links will always open in incognito mode in the overlay\n \
@@ -324,7 +349,11 @@ Swiping to the right will trigger the left header action which is usally the bac
             , "sourceUrl": "https://github.com/kugiigi/jerk-packages/tree/main/UITK/MariKit"
             , "developer": "Kugi Eusebio"
             , "devUrl": "https://github.com/kugiigi"
-            , "changelog": "v1.1 \n \
+            , "changelog": "v1.2\n\
+- Fixed anchor keyboard in dialogs in apps with Qt::AA_EnableHighDpiScaling such as Morph\n\
+- Force bottom gesture in apps where Header is used but not Page (Affects apps like TELEports)\n\
+- New QML property to force disable bottom gestures in `Page` components\n\n\n\
+v1.1 \n \
 - Settings implementation for gesture enablement and visual hint\n \
 - Implemented swipe gesture on the header\n \
 - Implemented back gesture animation in pages"
@@ -371,7 +400,53 @@ Notable features:\n \
             , "sourceUrl": "https://github.com/kugiigi/jerk-packages/tree/main/Lomiri/Lomiri_Plus_Essentials"
             , "developer": "Kugi Eusebio"
             , "devUrl": "https://github.com/kugiigi"
-            , "changelog": "v2.1 \n\
+            , "changelog": "v2.2\n\
+New Features:\n\
+- Auto-brightness DIY: Added option to make your own auto-brightness behavior\n\
+- Advanced Screenshot: Provide direct access to actions such as sharing and editing of screenshots\n\
+- Battery Tracking: Added option to track screen on and off time and options to display the data in the Battery indicator\n\
+- Fully Charged Alarm: Option to trigger an alarm when the device is fully charged or reached your set percentage\n\
+- Indicators: Added option to show bluetooth devices list in the Bluetooth indicator panel\n\
+- Light Sensor: Added option to allow automatically enabling Color Overlay and Dark Mode based on light sensor\n\
+- Lockscreen: Added option to change display name and use custom icon\n\
+- Notifications: Add option to display notification bubbles at the bottom\n\
+- Pocket Mode: All touch interactions are disabled when proximity sensor detects something near and the light sensor detects darkness\n\
+- Snatch Alarm: Set a contact that when it calls, silent mode is automatically disabled and volume is set to max\n\
+- Top Bar: Added option to use custom color for the icons and texts (Only when collapsed for now)\n\
+- Wake Up Alarms: Automatically disable wake up alarms until the next day once you press the awake in the lockscreen\n\
+- Waydroid Gestures: Added an option to disable a portion of the left and right edge gestures so you can use Waydroid gesture-based navigation\n\
+- Added option to disable shutdown and reboot options when in lockscreen. They can still be accessed by doing an extra step.\n\
+\n\
+Improvements:\n\
+- App Drawer: Added mouse hover area at the top/bottom to start search when the field is hidden\n\
+- App Drawer Dock: Added maximum expanded height settings\n\
+- Dynamic Cove: Added ambient mode in the media controls which overlays the current album art in your lockscreen\n\
+- Dynamic Cove: Added option to not hide CD Player when screen is off\n\
+- Quick Actions: Select Edge items when swipe exceeds the grid\n\
+- Quick Actions: Added search drawer action\n\
+- Quick Toggles: Added a settings for disabling indicator toggles when the device is locked\n\
+- Quick Toggles and Drawer Dock: Improved swipe gesture for expanding/collapsing\n\
+- Quick Toggles and Drawer Dock: Properly handle when expanded height exceeds the available height by making it scrollable\n\
+- Notifications: Disable swipe to dismiss for incoming calls\n\
+- Added subtle color change in the side-stage divider to indicate which stage is currently in focus\n\
+- Added option to automatically pause the media upon disconnecting a Bluetooth audio device\n\
+- Adjust the App splash image size based on window size when in windowed mode\n\
+- Added Features page in settings to consolidate all major features in Lomiri Plus\n\
+\n\
+Fixes:\n\
+- App Drawer: Fixed issues with mouse and multirow use in the selector indicator\n\
+- Dynamic Cove: Reload the media player object to try to fix when playing a playlist does nothing\n\
+- Launcher: Fixed noticeable change of color when quickly opening the Drawer by removing the animation\n\
+- Quick Actions: Fixed issue where sometimes quickly swiping will trigger the left/right edge most item\n\
+- Top Bar: Fixed blur background when using show desktop\n\
+- Fixed binding loop in indicator panels\n\
+- Fixed some misplaced items in Lomiri Plus settings\n\
+- Changed remaing labels of Direct Actions to Quick Actions\n\
+\n\
+Technical: \n\
+- Dynamic Cove: Use `Audio` instead of `MediaPlayer` for the media player\n\
+- Disable bottom gestures from MariKit in indicator panels (rely on MariKit changes)\n\n\n\
+v2.1 \n\
 General:\n \
 - Added option to show touch visuals (only works with one touchpoint and don't work perfectly)\n \
 - Apply custom BFB logo settings even when not using custom logo\n \
