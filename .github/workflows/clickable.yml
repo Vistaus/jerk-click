@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  create: 
+    tags: releases/[1-9]+.[0-9]+.[0-9]+
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  ubuntu-touch:
+    strategy:
+      fail-fast: false
+      matrix:
+         arch: [armhf, arm64, amd64]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout 
+      uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
+    - name: build package
+      uses: tuxecure/clickable@v1
+      with:
+        image: clickable/ci-20.04-${{ matrix.arch }}
+        run: clickable build
+    - name: Upload .click package
+      uses: actions/upload-artifact@v3.1.1
+      with:
+        path: build/*/app/*.click
