@@ -223,29 +223,29 @@ MainView {
         }
     }
 
-//~     property alias pam: pamLoader.item
-//~     Loader {
-//~         id: pamLoader
-//~         // A bit nonsense, but we're not using pam for security
-//~         asynchronous: true
-//~         sourceComponent: AuthenticationService {
-//~             id: pam
-//~             serviceName: "jerk-click"
-//~             onDenied: Qt.quit();
-//~             onGranted: {
-//~                 if (!mainView.settings.initialDialogShown) {
-//~                     let _popup = PopupUtils.open(initialDialog, mainView)
+    property alias pam: pamLoader.item
+    Loader {
+        id: pamLoader
+        // A bit nonsense, but we're not using pam for security
+        asynchronous: true
+        sourceComponent: AuthenticationService {
+            id: pam
+            serviceName: "jerk-click"
+            onDenied: Qt.quit();
+            onGranted: {
+                if (!mainView.settings.initialDialogShown) {
+                    let _popup = PopupUtils.open(initialDialog, mainView)
                     
-//~                     _popup.accepted.connect(function() {
-//~                         mainView.settings.initialDialogShown = true
-//~                     })
-//~                     _popup.getMeOut.connect(function() {
-//~                         Qt.quit();
-//~                     })
-//~                 }
-//~             }
-//~         }
-//~     }
+                    _popup.accepted.connect(function() {
+                        mainView.settings.initialDialogShown = true
+                    })
+                    _popup.getMeOut.connect(function() {
+                        Qt.quit();
+                    })
+                }
+            }
+        }
+    }
 
     Component {
         id: initialDialog
