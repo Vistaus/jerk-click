@@ -405,6 +405,7 @@ New Features:\n\
 - Auto-brightness DIY: Added option to make your own auto-brightness behavior\n\
 - Advanced Screenshot: Provide direct access to actions such as sharing and editing of screenshots\n\
 - Battery Tracking: Added option to track screen on and off time and options to display the data in the Battery indicator\n\
+- Fingerprint: Added option to enable the sensor even when the display is off and also added other options\n\
 - Fully Charged Alarm: Option to trigger an alarm when the device is fully charged or reached your set percentage\n\
 - Indicators: Added option to show bluetooth devices list in the Bluetooth indicator panel\n\
 - Light Sensor: Added option to allow automatically enabling Color Overlay and Dark Mode based on light sensor\n\
